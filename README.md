@@ -1,4 +1,4 @@
-# Handlebars.php Helpers Set
+# Handlebars.php Helpers
 
 Provides a set of helpers for [Handlebars.php](https://github.com/XaminProject/handlebars.php) template engine.
 
@@ -16,8 +16,8 @@ To use all helpers in your templates just create an instance of helpers set and
 attach it to Handlebars engine.
 
 ```php
-    $helpers = new \JustBlackBird\HandlebarsHelpers\Helpers();
-    $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
+$helpers = new \JustBlackBird\HandlebarsHelpers\Helpers();
+$engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
 ```
 
 Want to use only subset of helpers? Fine. Just create an instance of appropriate
@@ -25,19 +25,19 @@ helpers set and attach it to Handlebars engine. Here is an example for Date
 helpers:
 
 ```php
-    $helpers = new \JustBlackBird\HandlebarsHelpers\Date\Helpers();
-    $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
+$helpers = new \JustBlackBird\HandlebarsHelpers\Date\Helpers();
+$engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
 ```
 
 Want to use only chosen helpers? No problem. Just add them manually to your
 helpers set:
 
 ```php
-    $engine = new \Handlebars\Handlebars();
-    $engine->getHelpers()->add(
-        'ifEqual',
-        new \JustBlackBird\HandlebarsHelpers\Comparison\IfEqualHelper()
-    );
+$engine = new \Handlebars\Handlebars();
+$engine->getHelpers()->add(
+    'ifEqual',
+    new \JustBlackBird\HandlebarsHelpers\Comparison\IfEqualHelper()
+);
 ```
 
 
