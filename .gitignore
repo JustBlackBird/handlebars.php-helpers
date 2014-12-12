@@ -1,0 +1,6 @@
+# Exclude dependencies
+vendor
+
+# Exclude composer's files
+composer.phar
+composer.lock
