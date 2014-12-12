@@ -1,6 +1,8 @@
 # Handlebars.php Helpers
 
-Provides a set of helpers for [Handlebars.php](https://github.com/XaminProject/handlebars.php) template engine.
+[![Build Status](https://travis-ci.org/JustBlackBird/handlebars.php-helpers.svg)](https://travis-ci.org/JustBlackBird/handlebars.php-helpers)
+
+> Provides a set of helpers for [Handlebars.php](https://github.com/XaminProject/handlebars.php) template engine.
 
 
 ## Installation
