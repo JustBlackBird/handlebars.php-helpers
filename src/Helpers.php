@@ -30,6 +30,7 @@ class Helpers extends BaseHelpers
         $this->add('formatDate', new Date\FormatDateHelper());
 
         // Comparison helpers
+        $this->add('ifAny', new Comparison\IfAnyHelper());
         $this->add('ifEqual', new Comparison\IfEqualHelper());
         $this->add('ifEven', new Comparison\IfEvenHelper());
         $this->add('ifOdd', new Comparison\IfOddHelper());

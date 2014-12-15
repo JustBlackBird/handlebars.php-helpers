@@ -26,6 +26,7 @@ class Helpers extends BaseHelpers
     {
         parent::addDefaultHelpers();
 
+        $this->add('ifAny', new IfAnyHelper());
         $this->add('ifEqual', new IfEqualHelper());
         $this->add('ifEven', new IfEvenHelper());
         $this->add('ifOdd', new IfOddHelper());
