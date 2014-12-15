@@ -37,5 +37,6 @@ class Helpers extends BaseHelpers
 
         // String helpers
         $this->add('lowercase', new String\LowercaseHelper());
+        $this->add('uppercase', new String\UppercaseHelper());
     }
 }

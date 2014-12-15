@@ -27,5 +27,6 @@ class Helpers extends BaseHelpers
         parent::addDefaultHelpers();
 
         $this->add('lowercase', new LowercaseHelper());
+        $this->add('uppercase', new UppercaseHelper());
     }
 }
