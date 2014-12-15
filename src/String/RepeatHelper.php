@@ -45,7 +45,7 @@ class RepeatHelper implements HelperInterface
         $times = intval($context->get($parsed_args[0]));
         if ($times < 0) {
             throw new \InvalidArgumentException(
-                'The first argument has to be greater than or equal to 0.'
+                'The first argument of "repeat" helper has to be greater than or equal to 0.'
             );
         }
         $string = $template->render($context);
