@@ -8,12 +8,12 @@
  * file that was distributed with this source code.
  */
 
-namespace JustBlackBird\HandlebarsHelpers\Tests;
+namespace JustBlackBird\HandlebarsHelpers\Tests\String;
 
-use JustBlackBird\HandlebarsHelpers\Helpers;
+use JustBlackBird\HandlebarsHelpers\String\Helpers;
 
 /**
- * Test class for Global Helpers Set.
+ * Test class for String Helpers Set.
  *
  * @author Dmitriy Simushev <simushevds@gmail.com>
  */
@@ -38,16 +38,6 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
     public function helpersProvider()
     {
         return array(
-            // Date helpers
-            array('formatDate', '\\JustBlackBird\\HandlebarsHelpers\\Date\\FormatDateHelper'),
-
-            // Comparison helpers
-            array('ifEqual', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfEqualHelper'),
-            array('ifEven', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfEvenHelper'),
-            array('ifOdd', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfOddHelper'),
-            array('unlessEqual', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\UnlessEqualHelper'),
-
-            // String helpers
             array('lowercase', '\\JustBlackBird\\HandlebarsHelpers\\String\\LowercaseHelper'),
         );
     }

@@ -34,5 +34,8 @@ class Helpers extends BaseHelpers
         $this->add('ifEven', new Comparison\IfEvenHelper());
         $this->add('ifOdd', new Comparison\IfOddHelper());
         $this->add('unlessEqual', new Comparison\UnlessEqualHelper());
+
+        // String helpers
+        $this->add('lowercase', new String\LowercaseHelper());
     }
 }
