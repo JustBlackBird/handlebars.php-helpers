@@ -29,5 +29,6 @@ class Helpers extends BaseHelpers
         $this->add('lowercase', new LowercaseHelper());
         $this->add('uppercase', new UppercaseHelper());
         $this->add('repeat', new RepeatHelper());
+        $this->add('truncate', new TruncateHelper());
     }
 }
