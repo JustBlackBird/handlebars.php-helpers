@@ -24,7 +24,7 @@ class LowercaseHelperTest extends \PHPUnit_Framework_TestCase
      *
      * @dataProvider convertProvider
      */
-    public function testConvert($string)
+    public function testConvert($string, $result)
     {
         $helpers = new \Handlebars\Helpers(array('lowercase' => new LowercaseHelper()));
         $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
@@ -34,7 +34,7 @@ class LowercaseHelperTest extends \PHPUnit_Framework_TestCase
                 '{{lowercase str}}',
                 array('str' => $string)
             ),
-            strtolower($string)
+            $result
         );
     }
 
@@ -44,10 +44,10 @@ class LowercaseHelperTest extends \PHPUnit_Framework_TestCase
     public function convertProvider()
     {
         return array(
-            array('already in lower'),
-            array('Mixed Case String'),
-            array('ANOther mIxed CASE string'),
-            array('STRING IN CAPS'),
+            array('already in lowercase', 'already in lowercase'),
+            array('Mixed Case String', 'mixed case string'),
+            array('ANOther mIxed CASE string', 'another mixed case string'),
+            array('STRING IN CAPS', 'string in caps'),
         );
     }
 
