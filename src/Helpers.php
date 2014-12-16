@@ -41,5 +41,13 @@ class Helpers extends BaseHelpers
         $this->add('uppercase', new String\UppercaseHelper());
         $this->add('repeat', new String\RepeatHelper());
         $this->add('truncate', new String\TruncateHelper());
+
+        // Layout helpers
+        $storage = new Layout\BlockStorage();
+        $this->add('block', new Layout\BlockHelper($storage));
+        $this->add('extends', new Layout\ExtendsHelper($storage));
+        $this->add('override', new Layout\OverrideHelper($storage));
+        $this->add('ifOverridden', new Layout\IfOverriddenHelper($storage));
+        $this->add('unlessOverridden', new Layout\UnlessOverriddenHelper($storage));
     }
 }

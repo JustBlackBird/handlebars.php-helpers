@@ -8,12 +8,12 @@
  * file that was distributed with this source code.
  */
 
-namespace JustBlackBird\HandlebarsHelpers\Tests;
+namespace JustBlackBird\HandlebarsHelpers\Tests\Layout;
 
-use JustBlackBird\HandlebarsHelpers\Helpers;
+use JustBlackBird\HandlebarsHelpers\Layout\Helpers;
 
 /**
- * Test class for Global Helpers Set.
+ * Test class for Layout Helpers Set.
  *
  * @author Dmitriy Simushev <simushevds@gmail.com>
  */
@@ -38,23 +38,6 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
     public function helpersProvider()
     {
         return array(
-            // Date helpers
-            array('formatDate', '\\JustBlackBird\\HandlebarsHelpers\\Date\\FormatDateHelper'),
-
-            // Comparison helpers
-            array('ifAny', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfAnyHelper'),
-            array('ifEqual', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfEqualHelper'),
-            array('ifEven', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfEvenHelper'),
-            array('ifOdd', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfOddHelper'),
-            array('unlessEqual', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\UnlessEqualHelper'),
-
-            // String helpers
-            array('lowercase', '\\JustBlackBird\\HandlebarsHelpers\\String\\LowercaseHelper'),
-            array('uppercase', '\\JustBlackBird\\HandlebarsHelpers\\String\\UppercaseHelper'),
-            array('repeat', '\\JustBlackBird\\HandlebarsHelpers\\String\\RepeatHelper'),
-            array('truncate', '\\JustBlackBird\\HandlebarsHelpers\\String\\TruncateHelper'),
-
-            // Layout helpers
             array('block', '\\JustBlackBird\\HandlebarsHelpers\\Layout\\BlockHelper'),
             array('extends', '\\JustBlackBird\\HandlebarsHelpers\\Layout\\ExtendsHelper'),
             array('override', '\\JustBlackBird\\HandlebarsHelpers\\Layout\\OverrideHelper'),
