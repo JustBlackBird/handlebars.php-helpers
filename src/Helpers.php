@@ -40,6 +40,7 @@ class Helpers extends BaseHelpers
         $this->add('lowercase', new String\LowercaseHelper());
         $this->add('uppercase', new String\UppercaseHelper());
         $this->add('repeat', new String\RepeatHelper());
+        $this->add('replace', new String\ReplaceHelper());
         $this->add('truncate', new String\TruncateHelper());
 
         // Layout helpers

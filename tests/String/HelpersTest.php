@@ -41,6 +41,7 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
             array('lowercase', '\\JustBlackBird\\HandlebarsHelpers\\String\\LowercaseHelper'),
             array('uppercase', '\\JustBlackBird\\HandlebarsHelpers\\String\\UppercaseHelper'),
             array('repeat', '\\JustBlackBird\\HandlebarsHelpers\\String\\RepeatHelper'),
+            array('replace', '\\JustBlackBird\\HandlebarsHelpers\\String\\ReplaceHelper'),
             array('truncate', '\\JustBlackBird\\HandlebarsHelpers\\String\\TruncateHelper'),
         );
     }
