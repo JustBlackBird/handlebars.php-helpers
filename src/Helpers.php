@@ -29,6 +29,10 @@ class Helpers extends BaseHelpers
         // Date helpers
         $this->add('formatDate', new Date\FormatDateHelper());
 
+        // Collection helpers
+        $this->add('first', new Collection\FirstHelper());
+        $this->add('last', new Collection\LastHelper());
+
         // Comparison helpers
         $this->add('ifAny', new Comparison\IfAnyHelper());
         $this->add('ifEqual', new Comparison\IfEqualHelper());

@@ -41,6 +41,10 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
             // Date helpers
             array('formatDate', '\\JustBlackBird\\HandlebarsHelpers\\Date\\FormatDateHelper'),
 
+            // Collection helpers
+            array('first', '\\JustBlackBird\\HandlebarsHelpers\\Collection\\FirstHelper'),
+            array('last', '\\JustBlackBird\\HandlebarsHelpers\\Collection\\LastHelper'),
+
             // Comparison helpers
             array('ifAny', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfAnyHelper'),
             array('ifEqual', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfEqualHelper'),
