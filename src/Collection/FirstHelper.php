@@ -49,6 +49,17 @@ class FirstHelper implements HelperInterface
             throw new \InvalidArgumentException('Wrong type of the argument in the "first" helper.');
         }
 
-        return reset($collection);
+        if (is_array($collection)) {
+            return reset($collection);
+        }
+
+        // "reset" function does not work with \Traversable in HHVM. Thus we
+        // need to get the element manually.
+        while ($collection instanceof \IteratorAggregate) {
+            $collection = $collection->getIterator();
+        }
+        $collection->rewind();
+
+        return $collection->valid() ? $collection->current() : false;
     }
 }
