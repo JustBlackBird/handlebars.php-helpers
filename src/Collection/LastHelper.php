@@ -49,6 +49,23 @@ class LastHelper implements HelperInterface
             throw new \InvalidArgumentException('Wrong type of the argument in the "last" helper.');
         }
 
-        return end($collection);
+        if (is_array($collection)) {
+            return end($collection);
+        }
+
+        // "end" function does not work with \Traversable in HHVM. Thus we
+        // need to get the element manually.
+        while ($collection instanceof \IteratorAggregate) {
+            $collection = $collection->getIterator();
+        }
+
+        $collection->rewind();
+        $item = false;
+        while ($collection->valid()) {
+            $item = $collection->current();
+            $collection->next();
+        }
+
+        return $item;
     }
 }
