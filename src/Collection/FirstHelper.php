@@ -43,7 +43,11 @@ class FirstHelper implements HelperInterface
                 '"first" helper expects exactly one argument.'
             );
         }
+
         $collection = $context->get($parsed_args[0]);
+        if (!is_array($collection) && !($collection instanceof \Traversable)) {
+            throw new \InvalidArgumentException('Wrong type of the argument in the "first" helper.');
+        }
 
         return reset($collection);
     }
