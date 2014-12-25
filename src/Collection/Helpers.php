@@ -26,6 +26,7 @@ class Helpers extends BaseHelpers
     {
         parent::addDefaultHelpers();
 
+        $this->add('count', new CountHelper());
         $this->add('first', new FirstHelper());
         $this->add('last', new LastHelper());
     }

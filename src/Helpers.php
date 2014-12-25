@@ -30,6 +30,7 @@ class Helpers extends BaseHelpers
         $this->add('formatDate', new Date\FormatDateHelper());
 
         // Collection helpers
+        $this->add('count', new Collection\CountHelper());
         $this->add('first', new Collection\FirstHelper());
         $this->add('last', new Collection\LastHelper());
 

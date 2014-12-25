@@ -38,6 +38,7 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
     public function helpersProvider()
     {
         return array(
+            array('count', '\\JustBlackBird\\HandlebarsHelpers\\Collection\\CountHelper'),
             array('first', '\\JustBlackBird\\HandlebarsHelpers\\Collection\\FirstHelper'),
             array('last', '\\JustBlackBird\\HandlebarsHelpers\\Collection\\LastHelper'),
         );
