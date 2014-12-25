@@ -63,7 +63,7 @@ class LastHelperTest extends \PHPUnit_Framework_TestCase
      * Tests that exception is thrown if wrong number of arguments is used.
      *
      * @expectedException InvalidArgumentException
-     * @dataProvider wrongArgumentsProvider
+     * @dataProvider wrongArgumentsCountProvider
      */
     public function testArgumentsCount($template)
     {
@@ -76,13 +76,39 @@ class LastHelperTest extends \PHPUnit_Framework_TestCase
     /**
      * A data provider for testArgumentsCount method.
      */
-    public function wrongArgumentsProvider()
+    public function wrongArgumentsCountProvider()
     {
         return array(
             // Not enough arguments
             array('{{last}}'),
             // Too much arguments
             array('{{last "Arg" "ANOTHER ARG"}}'),
+        );
+    }
+
+    /**
+     * Tests invalid arguments type.
+     *
+     * @expectedException InvalidArgumentException
+     * @dataProvider invalidArgumentsProvider
+     */
+    public function testInvalidArguments($collection)
+    {
+        $helpers = new \Handlebars\Helpers(array('last' => new LastHelper()));
+        $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
+
+        $engine->render('{{last collection}}', array('collection' => $collection));
+    }
+
+    /**
+     * A data provider for testInvalidArguments method.
+     */
+    public function invalidArgumentsProvider()
+    {
+        return array(
+            array('a string'),
+            array(42),
+            array(new \stdClass()),
         );
     }
 }

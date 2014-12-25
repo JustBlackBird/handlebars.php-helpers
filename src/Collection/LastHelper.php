@@ -43,7 +43,11 @@ class LastHelper implements HelperInterface
                 '"last" helper expects exactly one argument.'
             );
         }
+
         $collection = $context->get($parsed_args[0]);
+        if (!is_array($collection) && !($collection instanceof \Traversable)) {
+            throw new \InvalidArgumentException('Wrong type of the argument in the "last" helper.');
+        }
 
         return end($collection);
     }
