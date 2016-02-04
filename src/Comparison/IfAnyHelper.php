@@ -12,7 +12,7 @@ namespace JustBlackBird\HandlebarsHelpers\Comparison;
 
 use Handlebars\Context;
 use Handlebars\Helper as HelperInterface;
-use Handlebars\String;
+use Handlebars\StringWrapper;
 use Handlebars\Template;
 
 /**
