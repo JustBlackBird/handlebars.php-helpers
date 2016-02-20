@@ -12,7 +12,7 @@ namespace JustBlackBird\HandlebarsHelpers\Comparison;
 
 use Handlebars\Context;
 use Handlebars\Helper as HelperInterface;
-use Handlebars\String;
+use Handlebars\StringWrapper;
 use Handlebars\Template;
 
 /**
@@ -48,10 +48,11 @@ class IfAnyHelper implements HelperInterface
         foreach ($parsed_args as $parsed_arg) {
             $value = $context->get($parsed_arg);
 
-            if ($value instanceof String) {
-                // Casting any object of \Handlebars\String will have false
-                // positive result even for those with empty internal strings.
-                // Thus we need to check internal string of such objects.
+            if ($value instanceof StringWrapper) {
+                // Casting any object of \Handlebars\StringWrapper will have
+                // false positive result even for those with empty internal
+                // strings. Thus we need to check internal string of such
+                // objects.
                 $value = $value->getString();
             }
 

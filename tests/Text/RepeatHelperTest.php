@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
 
-namespace JustBlackBird\HandlebarsHelpers\Tests\String;
+namespace JustBlackBird\HandlebarsHelpers\Tests\Text;
 
-use JustBlackBird\HandlebarsHelpers\String\RepeatHelper;
+use JustBlackBird\HandlebarsHelpers\Text\RepeatHelper;
 
 /**
  * Test class for "repeat" helper.

@@ -41,12 +41,12 @@ class Helpers extends BaseHelpers
         $this->add('ifOdd', new Comparison\IfOddHelper());
         $this->add('unlessEqual', new Comparison\UnlessEqualHelper());
 
-        // String helpers
-        $this->add('lowercase', new String\LowercaseHelper());
-        $this->add('uppercase', new String\UppercaseHelper());
-        $this->add('repeat', new String\RepeatHelper());
-        $this->add('replace', new String\ReplaceHelper());
-        $this->add('truncate', new String\TruncateHelper());
+        // Text helpers
+        $this->add('lowercase', new Text\LowercaseHelper());
+        $this->add('uppercase', new Text\UppercaseHelper());
+        $this->add('repeat', new Text\RepeatHelper());
+        $this->add('replace', new Text\ReplaceHelper());
+        $this->add('truncate', new Text\TruncateHelper());
 
         // Layout helpers
         $storage = new Layout\BlockStorage();

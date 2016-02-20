@@ -8,30 +8,30 @@
  * file that was distributed with this source code.
  */
 
-namespace JustBlackBird\HandlebarsHelpers\Tests\String;
+namespace JustBlackBird\HandlebarsHelpers\Tests\Text;
 
-use JustBlackBird\HandlebarsHelpers\String\UppercaseHelper;
+use JustBlackBird\HandlebarsHelpers\Text\LowercaseHelper;
 
 /**
- * Test class for "uppercase" helper.
+ * Test class for "lowercase" helper.
  *
  * @author Dmitriy Simushev <simushevds@gmail.com>
  */
-class UppercaseHelperTest extends \PHPUnit_Framework_TestCase
+class LowercaseHelperTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * Tests that strings are converted to uppercase properly.
+     * Tests that strings are converted to lowercase properly.
      *
      * @dataProvider convertProvider
      */
     public function testConvert($string, $result)
     {
-        $helpers = new \Handlebars\Helpers(array('uppercase' => new UppercaseHelper()));
+        $helpers = new \Handlebars\Helpers(array('lowercase' => new LowercaseHelper()));
         $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
 
         $this->assertEquals(
             $engine->render(
-                '{{uppercase str}}',
+                '{{lowercase str}}',
                 array('str' => $string)
             ),
             $result
@@ -44,10 +44,10 @@ class UppercaseHelperTest extends \PHPUnit_Framework_TestCase
     public function convertProvider()
     {
         return array(
-            array('ALREADY IN UPPERCASE', 'ALREADY IN UPPERCASE'),
-            array('Mixed Case String', 'MIXED CASE STRING'),
-            array('ANOther mIxed CASE string', 'ANOTHER MIXED CASE STRING'),
-            array('string in lowercase', 'STRING IN LOWERCASE'),
+            array('already in lowercase', 'already in lowercase'),
+            array('Mixed Case String', 'mixed case string'),
+            array('ANOther mIxed CASE string', 'another mixed case string'),
+            array('STRING IN CAPS', 'string in caps'),
         );
     }
 
@@ -59,7 +59,7 @@ class UppercaseHelperTest extends \PHPUnit_Framework_TestCase
      */
     public function testArgumentsCount($template)
     {
-        $helpers = new \Handlebars\Helpers(array('uppercase' => new UppercaseHelper()));
+        $helpers = new \Handlebars\Helpers(array('lowercase' => new LowercaseHelper()));
         $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
 
         $engine->render($template, array());
@@ -72,9 +72,9 @@ class UppercaseHelperTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             // Not enough arguments
-            array('{{uppercase}}'),
+            array('{{lowercase}}'),
             // Too much arguments
-            array('{{uppercase "Arg" "ANOTHER ARG"}}'),
+            array('{{lowercase "Arg" "ANOTHER ARG"}}'),
         );
     }
 }

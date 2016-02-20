@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace JustBlackBird\HandlebarsHelpers\String;
+namespace JustBlackBird\HandlebarsHelpers\Text;
 
 use Handlebars\Helpers as BaseHelpers;
 

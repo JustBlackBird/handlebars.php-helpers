@@ -8,12 +8,12 @@
  * file that was distributed with this source code.
  */
 
-namespace JustBlackBird\HandlebarsHelpers\Tests\String;
+namespace JustBlackBird\HandlebarsHelpers\Tests\Text;
 
-use JustBlackBird\HandlebarsHelpers\String\Helpers;
+use JustBlackBird\HandlebarsHelpers\Text\Helpers;
 
 /**
- * Test class for String Helpers Set.
+ * Test class for Text Helpers Set.
  *
  * @author Dmitriy Simushev <simushevds@gmail.com>
  */
@@ -38,11 +38,11 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
     public function helpersProvider()
     {
         return array(
-            array('lowercase', '\\JustBlackBird\\HandlebarsHelpers\\String\\LowercaseHelper'),
-            array('uppercase', '\\JustBlackBird\\HandlebarsHelpers\\String\\UppercaseHelper'),
-            array('repeat', '\\JustBlackBird\\HandlebarsHelpers\\String\\RepeatHelper'),
-            array('replace', '\\JustBlackBird\\HandlebarsHelpers\\String\\ReplaceHelper'),
-            array('truncate', '\\JustBlackBird\\HandlebarsHelpers\\String\\TruncateHelper'),
+            array('lowercase', '\\JustBlackBird\\HandlebarsHelpers\\Text\\LowercaseHelper'),
+            array('uppercase', '\\JustBlackBird\\HandlebarsHelpers\\Text\\UppercaseHelper'),
+            array('repeat', '\\JustBlackBird\\HandlebarsHelpers\\Text\\RepeatHelper'),
+            array('replace', '\\JustBlackBird\\HandlebarsHelpers\\Text\\ReplaceHelper'),
+            array('truncate', '\\JustBlackBird\\HandlebarsHelpers\\Text\\TruncateHelper'),
         );
     }
 }

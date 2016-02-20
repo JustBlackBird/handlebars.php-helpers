@@ -53,12 +53,12 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
             array('ifOdd', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfOddHelper'),
             array('unlessEqual', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\UnlessEqualHelper'),
 
-            // String helpers
-            array('lowercase', '\\JustBlackBird\\HandlebarsHelpers\\String\\LowercaseHelper'),
-            array('uppercase', '\\JustBlackBird\\HandlebarsHelpers\\String\\UppercaseHelper'),
-            array('repeat', '\\JustBlackBird\\HandlebarsHelpers\\String\\RepeatHelper'),
-            array('replace', '\\JustBlackBird\\HandlebarsHelpers\\String\\ReplaceHelper'),
-            array('truncate', '\\JustBlackBird\\HandlebarsHelpers\\String\\TruncateHelper'),
+            // Text helpers
+            array('lowercase', '\\JustBlackBird\\HandlebarsHelpers\\Text\\LowercaseHelper'),
+            array('uppercase', '\\JustBlackBird\\HandlebarsHelpers\\Text\\UppercaseHelper'),
+            array('repeat', '\\JustBlackBird\\HandlebarsHelpers\\Text\\RepeatHelper'),
+            array('replace', '\\JustBlackBird\\HandlebarsHelpers\\Text\\ReplaceHelper'),
+            array('truncate', '\\JustBlackBird\\HandlebarsHelpers\\Text\\TruncateHelper'),
 
             // Layout helpers
             array('block', '\\JustBlackBird\\HandlebarsHelpers\\Layout\\BlockHelper'),

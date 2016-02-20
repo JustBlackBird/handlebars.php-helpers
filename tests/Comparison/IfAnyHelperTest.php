@@ -61,7 +61,7 @@ class IfAnyHelperTest extends \PHPUnit_Framework_TestCase
                     'b' => null,
                     'c' => array(),
                     'd' => '',
-                    'e' => new \Handlebars\String(''),
+                    'e' => new \Handlebars\StringWrapper(''),
                 ),
                 'false',
             ),
