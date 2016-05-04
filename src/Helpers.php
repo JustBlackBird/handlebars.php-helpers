@@ -40,6 +40,7 @@ class Helpers extends BaseHelpers
         $this->add('ifEven', new Comparison\IfEvenHelper());
         $this->add('ifOdd', new Comparison\IfOddHelper());
         $this->add('unlessEqual', new Comparison\UnlessEqualHelper());
+        $this->add('ifBetween', new Comparison\IfBetweenHelper());
 
         // Text helpers
         $this->add('lowercase', new Text\LowercaseHelper());
