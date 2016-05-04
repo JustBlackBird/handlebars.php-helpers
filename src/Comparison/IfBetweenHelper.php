@@ -36,9 +36,9 @@ class IfBetweenHelper implements HelperInterface
     public function execute(Template $template, Context $context, $args, $source)
     {
         $parsed_args = $template->parseArguments($args);
-        if (count($parsed_args) != 2) {
+        if (count($parsed_args) != 3) {
             throw new \InvalidArgumentException(
-                '"ifEqual" helper expects exactly two arguments.'
+                '"ifBetween" helper expects exactly three arguments.'
             );
         }
 
