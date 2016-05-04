@@ -15,7 +15,7 @@ use Handlebars\Helper as HelperInterface;
 use Handlebars\Template;
 
 /**
- * Conditional helper that checks if two values are equal or not.
+ * Conditional helper that checks if a value is between two others
  *
  * Example of usage:
  * ```handlebars
