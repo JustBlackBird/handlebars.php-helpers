@@ -11,29 +11,29 @@
 namespace JustBlackBird\HandlebarsHelpers\Tests\Comparison;
 
 use InvalidArgumentException;
-use JustBlackBird\HandlebarsHelpers\Comparison\IfBetweenHelper;
+use JustBlackBird\HandlebarsHelpers\Comparison\IfLessHelper;
 
 /**
- * Test class for "ifBetween" helper.
+ * Test class for "ifLess" helper.
  *
  * @author Jesse Weigert <jesse.weigert@accretivetg.com>
  */
-class IfBetweenHelperTest extends \PHPUnit_Framework_TestCase
+class IfLessHelperTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Tests conditions work as expected.
      *
      * @dataProvider conditionProvider
      */
-    public function testCondition($value, $min, $max, $is_equal)
+    public function testCondition($left, $right, $is_equal)
     {
-        $helpers = new \Handlebars\Helpers(array('ifBetween' => new IfBetweenHelper()));
+        $helpers = new \Handlebars\Helpers(array('ifLess' => new IfLessHelper()));
         $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
 
         $this->assertEquals(
             $engine->render(
-                '{{#ifBetween value min max}}true{{else}}false{{/ifBetween}}',
-                array('value' => $value, 'min' => $min, 'max' => $max)
+                '{{#ifLess left right}}true{{else}}false{{/ifLess}}',
+                array('left' => $left, 'right' => $right)
             ),
             $is_equal ? 'true' : 'false'
         );
@@ -45,12 +45,18 @@ class IfBetweenHelperTest extends \PHPUnit_Framework_TestCase
     public function conditionProvider()
     {
         return array(
-            // In between
-            array(10, 0, 100, true),
-            // Below min
-            array(10, 100, 1000, false),
-            // Above max
-            array(100, 0, 10, false),
+            // 1 is less than 10
+            array(1, 10, true),
+            // 10 is not less than 1
+            array(10, 1, false),
+            // Same values
+            array(123, 123, false),
+            // Equal values but with different types
+            array(123, "123", false),
+            // One more type conversion check
+            array(0, false, false),
+            // Different values
+            array(123, false, false),
         );
     }
 
@@ -62,7 +68,7 @@ class IfBetweenHelperTest extends \PHPUnit_Framework_TestCase
      */
     public function testArgumentsCount($template)
     {
-        $helpers = new \Handlebars\Helpers(array('ifBetween' => new IfBetweenHelper()));
+        $helpers = new \Handlebars\Helpers(array('ifLess' => new IfLessHelper()));
         $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
 
         $engine->render($template, array());
@@ -75,10 +81,10 @@ class IfBetweenHelperTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             // Not enough arguments
-            array('{{#ifBetween}}yes{{else}}no{{/ifBetween}}'),
-            array('{{#ifBetween 5}}yes{{else}}no{{/ifBetween}}'),
+            array('{{#ifLess}}yes{{else}}no{{/ifLess}}'),
+            array('{{#ifLess 5}}yes{{else}}no{{/ifLess}}'),
             // Too much arguments
-            array('{{#ifBetween 2 4 8 14}}yes{{else}}no{{/ifBetween}}'),
+            array('{{#ifLess 2 4 8}}yes{{else}}no{{/ifLess}}'),
         );
     }
 }
