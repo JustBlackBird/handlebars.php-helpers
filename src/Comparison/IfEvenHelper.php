@@ -10,9 +10,7 @@
 
 namespace JustBlackBird\HandlebarsHelpers\Comparison;
 
-use Handlebars\Context;
 use Handlebars\Helper as HelperInterface;
-use Handlebars\Template;
 
 /**
  * Conditional helper that checks if specified argument is even or not.
@@ -28,33 +26,19 @@ use Handlebars\Template;
  *
  * @author Dmitriy Simushev <simushevds@gmail.com>
  */
-class IfEvenHelper implements HelperInterface
+class IfEvenHelper extends AbstractComparisonHelper implements HelperInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function execute(Template $template, Context $context, $args, $source)
+    protected function evaluateCondition($args)
     {
-        $parsed_args = $template->parseArguments($args);
-        if (count($parsed_args) != 1) {
+        if (count($args) != 1) {
             throw new \InvalidArgumentException(
                 '"ifEven" helper expects exactly one argument.'
             );
         }
 
-        $condition = ($context->get($parsed_args[0]) % 2 == 0);
-
-        if ($condition) {
-            $template->setStopToken('else');
-            $buffer = $template->render($context);
-            $template->setStopToken(false);
-        } else {
-            $template->setStopToken('else');
-            $template->discard();
-            $template->setStopToken(false);
-            $buffer = $template->render($context);
-        }
-
-        return $buffer;
+        return ($args[0] % 2 == 0);
     }
 }
