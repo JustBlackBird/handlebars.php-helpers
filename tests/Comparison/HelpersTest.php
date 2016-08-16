@@ -43,6 +43,7 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
             array('ifEven', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfEvenHelper'),
             array('ifOdd', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfOddHelper'),
             array('ifLess', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfLessHelper'),
+            array('ifMore', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\IfMoreHelper'),
             array('unlessEqual', '\\JustBlackBird\\HandlebarsHelpers\\Comparison\\UnlessEqualHelper'),
         );
     }
