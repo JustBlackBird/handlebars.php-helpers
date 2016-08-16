@@ -15,7 +15,7 @@ use Handlebars\Helper as HelperInterface;
 /**
  * Conditional helper that checks if one value is less than another one.
  *
- * My "less" strict inequality is meant. That's why in cases where two equal
+ * By "less" strict inequality is meant. That's why in cases where two equal
  * values are compared the result of the "less" operation is false.
  *
  * Example of usage:
