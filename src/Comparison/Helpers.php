@@ -33,6 +33,7 @@ class Helpers extends BaseHelpers
         $this->add('ifLess', new IfLessHelper());
         $this->add('ifMore', new IfMoreHelper());
         $this->add('ifBetween', new IfBetweenHelper());
+        $this->add('ifBetweenClosed', new IfBetweenClosedHelper());
         $this->add('unlessEqual', new UnlessEqualHelper());
     }
 }
