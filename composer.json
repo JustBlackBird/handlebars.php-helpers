@@ -1,6 +1,6 @@
 {
     "name": "justblackbird/handlebars.php-helpers",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "A set of helpers for Handlebars.php template engine.",
     "type": "library",
     "license": "MIT",
