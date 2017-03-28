@@ -43,7 +43,7 @@ class HelpersTest extends \PHPUnit_Framework_TestCase
             array('repeat', '\\JustBlackBird\\HandlebarsHelpers\\Text\\RepeatHelper'),
             array('replace', '\\JustBlackBird\\HandlebarsHelpers\\Text\\ReplaceHelper'),
             array('truncate', '\\JustBlackBird\\HandlebarsHelpers\\Text\\TruncateHelper'),
-            array('excerpt', '\\JustBlackBird\\HandlebarsHelpers\\Text\\ExcerptHelper'),
+            array('ellipsis', '\\JustBlackBird\\HandlebarsHelpers\\Text\\EllipsisHelper'),
         );
     }
 }

@@ -7,41 +7,41 @@
 
 namespace JustBlackBird\HandlebarsHelpers\Tests\Text;
 
-use JustBlackBird\HandlebarsHelpers\Text\ExcerptHelper;
+use JustBlackBird\HandlebarsHelpers\Text\EllipsisHelper;
 
 /**
- * Test class for "excerpt" helper.
+ * Test class for "ellipsis" helper.
  *
  * @author Matteo Merola <mattmezza@gmail.com>
  */
-class ExcerptTest extends \PHPUnit_Framework_TestCase
+class EllipsisTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * Tests that strings are repeated properly.
      *
      * @dataProvider truncateProvider
      */
-    public function testExcerpt($template, $data, $result)
+    public function testEllipsis($template, $data, $result)
     {
-        $helpers = new \Handlebars\Helpers(array('excerpt' => new ExcerptHelper()));
+        $helpers = new \Handlebars\Helpers(array('ellipsis' => new EllipsisHelper()));
         $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
 
         $this->assertEquals($engine->render($template, $data), $result);
     }
 
     /**
-     * A data provider for testExcerpt method.
+     * A data provider for testEllipsis method.
      */
     public function truncateProvider()
     {
         return array(
             // No truncate
-            array('{{excerpt a len}}', array('a' => '123', 'len' => 5), '123'),
+            array('{{ellipsis a len}}', array('a' => '123', 'len' => 5), '123'),
             // Simple truncates
-            array('{{excerpt "prova matteo ciao" 2}}', array(), 'prova matteo'),
-            array('{{excerpt "prova merola hello" 0}}', array(), ''),
+            array('{{ellipsis "prova matteo ciao" 2}}', array(), 'prova matteo'),
+            array('{{ellipsis "prova merola hello" 0}}', array(), ''),
             // Truncate with ellipsis
-            array('{{excerpt "prova matt" 1 "..."}}', array(), 'prova...'),
+            array('{{ellipsis "prova matt" 1 "..."}}', array(), 'prova...'),
         );
     }
 
@@ -53,7 +53,7 @@ class ExcerptTest extends \PHPUnit_Framework_TestCase
      */
     public function testArgumentsCount($template)
     {
-        $helpers = new \Handlebars\Helpers(array('excerpt' => new ExcerptHelper()));
+        $helpers = new \Handlebars\Helpers(array('ellipsis' => new EllipsisHelper()));
         $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
 
         $engine->render($template, array());
@@ -66,10 +66,10 @@ class ExcerptTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             // Not enough arguments
-            array('{{excerpt}}'),
-            array('{{excerpt "abc"}}'),
+            array('{{ellipsis}}'),
+            array('{{ellipsis "abc"}}'),
             // Too much arguments
-            array('{{excerpt "abc" 30 "..." "xyz"}}'),
+            array('{{ellipsis "abc" 30 "..." "xyz"}}'),
         );
     }
 
@@ -81,7 +81,7 @@ class ExcerptTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvalidArguments($template)
     {
-        $helpers = new \Handlebars\Helpers(array('excerpt' => new ExcerptHelper()));
+        $helpers = new \Handlebars\Helpers(array('ellipsis' => new EllipsisHelper()));
         $engine = new \Handlebars\Handlebars(array('helpers' => $helpers));
 
         $engine->render($template, array());
@@ -94,7 +94,7 @@ class ExcerptTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             // Negative target length.
-            array('{{excerpt "abc" -10}}'),
+            array('{{ellipsis "abc" -10}}'),
         );
     }
 }

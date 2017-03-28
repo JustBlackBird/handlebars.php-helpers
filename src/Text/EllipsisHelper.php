@@ -1,9 +1,12 @@
 <?php
-/**
-* Excerpt
-* (c) Matteo Merola
-*
-*/
+/*
+ * This file is part of Handlebars.php Helpers Set
+ *
+ * (c) Dmitriy Simushev <simushevds@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 namespace JustBlackBird\HandlebarsHelpers\Text;
 
@@ -16,7 +19,7 @@ use Handlebars\Template;
  *
  * Usage:
  * ```handlebars
- *   {{#excerpt string length append}}
+ *   {{#ellipsis string length append}}
  * ```
  *
  * Arguments:
@@ -27,7 +30,7 @@ use Handlebars\Template;
  *
  * @author Matteo Merola <mattmezza@gmail.com>
  */
-class ExcerptHelper implements HelperInterface
+class EllipsisHelper implements HelperInterface
 {
     /**
      * {@inheritdoc}
@@ -37,7 +40,7 @@ class ExcerptHelper implements HelperInterface
         $parsed_args = $template->parseArguments($args);
         if (count($parsed_args) < 2 || count($parsed_args) > 3) {
             throw new \InvalidArgumentException(
-                '"excerpt" helper expects two or three arguments.'
+                '"ellipsis" helper expects two or three arguments.'
             );
         }
         $varContent = (string)$context->get($parsed_args[0]);
@@ -48,7 +51,7 @@ class ExcerptHelper implements HelperInterface
         }
         if ($limit < 0) {
             throw new \InvalidArgumentException(
-                'The second argument of "excerpt" helper has to be greater than or equal to 0.'
+                'The second argument of "ellipsis" helper has to be greater than or equal to 0.'
             );
         }
         $words = str_word_count($varContent, 2);
