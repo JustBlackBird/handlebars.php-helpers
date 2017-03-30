@@ -1,8 +1,11 @@
 <?php
 /*
+ * This file is part of Handlebars.php Helpers Set
  *
- * (c) Matteo Merola <mattmezza@gmail.com>
+ * (c) Dmitriy Simushev <simushevds@gmail.com>
  *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace JustBlackBird\HandlebarsHelpers\Tests\Text;
