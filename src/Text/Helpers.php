@@ -31,5 +31,6 @@ class Helpers extends BaseHelpers
         $this->add('repeat', new RepeatHelper());
         $this->add('replace', new ReplaceHelper());
         $this->add('truncate', new TruncateHelper());
+        $this->add('ellipsis', new EllipsisHelper());
     }
 }

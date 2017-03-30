@@ -47,6 +47,7 @@ class Helpers extends BaseHelpers
         $this->add('repeat', new Text\RepeatHelper());
         $this->add('replace', new Text\ReplaceHelper());
         $this->add('truncate', new Text\TruncateHelper());
+        $this->add('ellipsis', new Text\EllipsisHelper());
 
         // Layout helpers
         $storage = new Layout\BlockStorage();
