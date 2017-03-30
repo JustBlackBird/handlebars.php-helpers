@@ -43,7 +43,7 @@ class EllipsisHelper implements HelperInterface
                 '"ellipsis" helper expects two or three arguments.'
             );
         }
-        $varContent = (string)$context->get($parsed_args[0]);
+        $var_content = (string)$context->get($parsed_args[0]);
         $limit = intval($context->get($parsed_args[1]));
         $ellipsis = isset($parsed_args[2]) ? (string)$context->get($parsed_args[2]) : '';
         if ($limit === 0) {
@@ -54,22 +54,23 @@ class EllipsisHelper implements HelperInterface
                 'The second argument of "ellipsis" helper has to be greater than or equal to 0.'
             );
         }
-        $words = str_word_count($varContent, 2);
+        $words = str_word_count($var_content, 2);
         $value = "";
         if (count($words) > $limit) {
             $permitted = array_slice($words, 0, $limit, true);
             end($permitted);
-            $lastWordPosition = key($permitted);
-            $lastWord = $permitted[$lastWordPosition];
-            $lastWordLength = strlen($lastWord);
-            $realLimit = $lastWordPosition+$lastWordLength;
-            $value = substr($varContent, 0, $realLimit);
+            $last_word_position = key($permitted);
+            $last_word = $permitted[$last_word_position];
+            $last_word_length = strlen($last_word);
+            $real_limit = $last_word_position + $last_word_length;
+            $value = substr($var_content, 0, $real_limit);
         } else {
-            $value .= $varContent;
+            $value .= $var_content;
         }
         if ($ellipsis) {
             $value .= $ellipsis;
         }
+
         return $value;
     }
 }
